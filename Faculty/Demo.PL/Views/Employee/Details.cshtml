@@ -1,0 +1,43 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Details";    
+}
+<h1>Employee Details</h1>
+
+<div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label asp-for="@Model.Name" class="col-form-label"></label>
+                <input asp-for="@Model.Name" class="form-control" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Address" class="col-form-label"></label>
+                <input asp-for="@Model.Address" class="form-control" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Salary" class="col-form-label"></label>
+                <input asp-for="@Model.Salary" class="form-control" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Email" class="col-form-label"></label>
+                <input asp-for="@Model.Email" class="form-control" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.HiringDate" class="col-form-label"></label>
+                <input asp-for="@Model.HiringDate" class="form-control" readonly />
+            </div>
+            <div class="form-group">
+                <img src="~/Files/Images/@Model.ImageUrl"  height="200" width="200" />
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="@Model.IsActive" class="col-form-label"></label>
+                <input asp-for="@Model.IsActive" cclass="form-control"  disabled />
+            </div>
+        </div>
+    </div>
+    </br>
+    <a asp-controller="Employee" class="btn btn-success" asp-action="Update" asp-route-id="@Model.Id">Update</a>
+    <a asp-controller="Employee" asp-action="Index" class="btn btn-light">Back To List</a>
+</div>

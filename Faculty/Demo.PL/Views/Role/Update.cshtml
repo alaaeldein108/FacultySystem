@@ -1,0 +1,31 @@
+﻿@model ApplicationRole
+@{
+    ViewData["Title"] = "Update";
+}
+<h1>User Update</h1>
+<div>
+    <div class="row">
+        <form asp-controller="Role" asp-action="Update" enctype="multipart/form-data">
+            <div class="col-12">
+                <input hidden asp-for="Id">
+                <div class="form-group">
+                    <label asp-for="@Model.Name" class="col-form-label"></label>
+                    <input asp-for="@Model.Name" class="form-control" />
+                </div>
+                <br />
+                <div class="my-3">
+                    <a asp-route-roleId="@Model.Id" asp-controller="Role" asp-action="AddOrRemoveUsers" class="btn btn-info">Add OR Remove Users </a>
+                </div>
+                 <br/>
+                <br />
+                <input type="submit" value="Update" class="btn btn-primary" />
+                <a asp-controller="Role" asp-action="Index" class="btn btn-light">Back To List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
